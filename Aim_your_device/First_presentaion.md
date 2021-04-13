@@ -2,7 +2,10 @@
 # 진행상황 발표
 
 <br/>
+### 지난 발표 
 [프레젠테이션 2.pdf](https://github.com/ChangJinMoon/My_Workspace/files/6301662/2.pdf)
+
+<br/>
 
 > ## 지난 프로젝트 제안서 발표 이후 피드백
  >> 1. 페어링된 블루투스 디바이스 자동 연결 조사
