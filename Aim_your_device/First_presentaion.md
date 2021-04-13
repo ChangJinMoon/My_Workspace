@@ -3,8 +3,9 @@
 
 <br/>
 
-### 지난 발표 
-[프레젠테이션 2.pdf](https://github.com/ChangJinMoon/My_Workspace/files/6301662/2.pdf)
+### 지난 발표
+
+[지난 발표 자료](https://github.com/ChangJinMoon/My_Workspace/files/6301662/2.pdf)
 
 <br/>
 
@@ -93,7 +94,26 @@ ___
         
         2. 개발자가 측정을 해서 특정 값 목록화
         
-        =>택 일하여 진행할 계획 
-        
-        
-     
+        =>택 일하여 진행할 계획
+<br/>
+<br/>
+
+## 3. 현 개발 상황
+____
+
+### 1. 클라이언트
+>
+ 클라이언트 개발을 진행 중이며 ios 프로그래밍을 공부하기 위해서 youtube와 관련 서적 통해 진행하고 있습니다
+ 지금은 공부하는 단계여서 개발에 진척은 없지만 시험이 끝난 이후부터 본격적인 개발을 진행하려고 계획하고 있습니다
+ 사용할 Skill -> Xcode , swift
+<br/>
+
+### 2. 서버
+>
+ 서버는 서버의 기능중 사용자가 집에 왔을때를 인식하기 위해서 집 데이터를 뽑아내는 
+ 기능 구현을 위해 serverless framewrok를 이용해서 클라이언트와의 통신을 action trigger를 통해
+ 진행할 예정이며  지금은 클라이언트가 좌표 데이터를 보내주면 map api을 이용하여 도로명 주소를 뽑아내는 과정까지 진행하고 있습니다.
+
+ 사용할 Skill & Platform -> java,json NaverCloudPlatform
+([자세한 설명 URL](https://guide.ncloud-docs.com/docs/ko/home#))
+
