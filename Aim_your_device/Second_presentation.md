@@ -5,60 +5,53 @@
 
 ### 지난 발표
 
-[지난 발표 자료](https://github.com/ChangJinMoon/My_Workspace/files/6301662/2.pdf)
+[지난 발표 자료](https://github.com/ChangJinMoon/My_Workspace/blob/master/Aim_your_device/First_presentaion.md)
 
 <br/>
 
-> ## 지난 프로젝트 제안서 발표 이후 피드백
- >> 1. 페어링된 블루투스 디바이스 자동 연결 조사
- >> 2. 실내 위치 추적의 정확성 검토
-<br/>
-
-## 1. 페어링된 블루투스 디바이스 자동 연결(IOS)
+## _Client_
+## 1. 위도와 경도 받기(IOS)
 ____
 
-+ 페어링 History 생성
-  - 한번 연결했을떄 _CentralManager_ 로 해당 객체 저장
++ locationManager 인스턴스 생성 및 위치 추적 권환 요청
+  - 앱을 실행할때 위치 추적 권한 요청
 
 <br/>
   
-```objectivec
--(void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
-    [self connectedDonePeriphral];
-    [OpenitUtils savePeripheral:peripheral];
-    _discoveredPeripheral = peripheral;
-    [self performSegueWithIdentifier:@"GoCheckView" sender:self];
-}
+```swift
+        //locationManager 인스턴스 생성 
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        
+        //앱 실행을 위한 위치 추적 권한 요청
+        locationManager.requestWhenInUseAuthorization()
 ```
 
 <br/>
 
-  - 이후 자동으로 연결을 원하는 device 연결
-    + 제약사항: 해당 device가 PowerOn 상태여야 가능
+  - 위치 업데이트를 통한 위도 경도 받기
+    + 위도 경도를 받아 저장
 
 <br/>
   
   ```objectivec
-  - (void)viewDidLoad {
-    if([OpenitUtils isSavedPeripheral]) {
-        NSString *uuidString = [OpenitUtils getSavedPeripheralUUIDString];
-        NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:uuidString];
-        NSArray* periphralarray = [_centralManager retrievePeripheralsWithIdentifiers:@[uuid]];
-        for(CBPeripheral *periphral in periphralarray) {
-            [_peripheralList addObject:periphral];
-            _discoveredPeripheral = periphral;
-        }
-        if(_discoveredPeripheral != nil) {
-            [self.tableView reloadData];
-            [self showAlert];
-        }
-    }
-}
+        //배터리에 맞게 최적의 정확도 자동 설정
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        //위치업데이트
+        locationManager.startUpdatingLocation()
+        
+        //위도 경도 가져오기
+        let coor = locationManager.location?.coordinate
+        latitude = coor?.latitude
+        longitude = coor?.longitude
   ```
   <br/>
   
-+ 각 device의 ID를 호출하는 방식으로 자동연결
- 
+  + ### 이후 추가 개발 계획
+   - 실시간으로 위치 데이터 받아 출력 받는 기능 구현 예정
+   - 간단한 ui 개발
+  
 <br/>
 
 ## 2. 실내 위치 추적
