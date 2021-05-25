@@ -5,7 +5,7 @@
 
 ### 지난 발표
 
-[지난 발표 자료](https://github.com/ChangJinMoon/My_Workspace/blob/master/Aim_your_device/Second_presentaion.md)
+[지난 발표 자료](https://github.com/ChangJinMoon/My_Workspace/blob/master/Aim_your_device/Second_presentation.md)
 
 <br/>
 
